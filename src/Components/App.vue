@@ -1,27 +1,37 @@
 <template>
   <div id="app">
+    <!-- <router-link to="/" :products="products">Home</router-link>
+    <router-link to="/departments">Departments</router-link> -->
     <Header></Header>
-    <ProductList v-bind:price="price" v-bind:sortby="sortby"></ProductList>
+    <Home :products="products"></Home>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Header from "./Header.vue";
-import ProductList from "./ProductList.vue";
+import Home from "./Home.vue";
+import { fetchProducts } from "../api";
 
 export default {
   name: "app",
   data() {
     return {
+      products: [],
       price: "asc",
-      sortby: "name"
+      sortby: "name",
     };
+  },
+  mounted() {
+    fetchProducts().then((products) => {
+      this.products = products;
+    });
   },
   components: {
     Header,
-    ProductList
+    Home,
   },
-  methods: {}
+  methods: {},
 };
 </script>
 
