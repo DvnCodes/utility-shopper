@@ -7,8 +7,8 @@
           product.price.value.toFixed(2).toString()
       }}
     </p>
-    <p>{{ product.department }}</p>
-    <p>{{ product.type }}</p>
+    <p>{{ product.description }}</p>
+    <p>{{ product.weight }}</p>
   </div>
 </template>
 
