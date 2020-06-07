@@ -1,9 +1,14 @@
 <template>
   <div id="card">
     <h3>{{ product.name }}</h3>
-    <p>{{(product.price.currency === 'GBP' ? '£' : '???') + product.price.value.toFixed(2).toString()}}</p>
-    <p>{{product.department}}</p>
-    <!-- <p>{{product.type}}</p> -->
+    <p>
+      {{
+        (product.price.currency === "GBP" ? "£" : "???") +
+          product.price.value.toFixed(2).toString()
+      }}
+    </p>
+    <p>{{ product.department }}</p>
+    <p>{{ product.type }}</p>
   </div>
 </template>
 
@@ -11,8 +16,8 @@
 export default {
   name: "ProductCard",
   props: {
-    product: Object
-  }
+    product: Object,
+  },
 };
 </script>
 
