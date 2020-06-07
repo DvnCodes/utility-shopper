@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const fetchProducts = (price = "asc", sortby = "name") => {
   return axios
-    .get("http://localhost:9090/api/products", {
+    .get("https://utility-locker-fe.herokuapp.com/api/products", {
       params: {
         price,
         sortby,
@@ -13,5 +13,3 @@ export const fetchProducts = (price = "asc", sortby = "name") => {
     })
     .catch((err) => err);
 };
-
-//"https://utility-locker-fe.herokuapp.com/api/products"
