@@ -31,9 +31,6 @@ export default {
     return { groupedProducts: [], groupProp: "name" };
   },
   components: { ProductList, GroupSelect },
-  created() {
-    // this.groupByType(this.products);
-  },
   computed: {
     groupedThings() {
       let group = this.products.reduce((r, a) => {
@@ -42,19 +39,6 @@ export default {
       }, {});
       console.log("group", group);
       return group;
-    },
-  },
-  methods: {
-    // groupByType: function(products, prop = "department") {
-    //   let group = products.reduce((r, a) => {
-    //     r[a[prop]] = [...(r[a[prop]] || []), a];
-    //     return r;
-    //   }, {});
-    //   console.log("group", group);
-    //   this.groupedProducts = group;
-    // },
-    updateGroupProp: function(e) {
-      this.groupProp = e.value;
     },
   },
 };

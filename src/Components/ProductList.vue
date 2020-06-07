@@ -1,6 +1,7 @@
 <template>
   <div>
     <PriceToggle
+      v-if="sortedProducts.length > 1"
       v-on:changePriceOrder="order *= -1"
       :order="order"
     ></PriceToggle>
@@ -13,7 +14,6 @@
 </template>
 
 <script>
-// import { fetchProducts } from "../api";
 import PriceToggle from "./PriceToggle";
 
 import ProductCard from "./ProductCard";
@@ -37,11 +37,6 @@ export default {
   components: {
     ProductCard,
     PriceToggle,
-  },
-  mounted() {
-    // fetchProducts(this.price).then((products) => {
-    //   this.products = products;
-    // });
   },
 };
 </script>

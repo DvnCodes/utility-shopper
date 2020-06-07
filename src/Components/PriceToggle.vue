@@ -6,14 +6,6 @@
         {{ order === 1 ? "desc" : "asc" }}
       </button>
     </label>
-    <!-- <label>
-      Sort By:
-      <select>
-        <option>all</option>
-        <option>department</option>
-        <option>type</option>
-      </select>
-    </label> -->
   </div>
 </template>
 
