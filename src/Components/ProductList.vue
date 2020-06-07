@@ -1,9 +1,9 @@
 <template>
   <div>
-    <SortButtons
+    <PriceToggle
       v-on:changePriceOrder="order *= -1"
       :order="order"
-    ></SortButtons>
+    ></PriceToggle>
     <ul>
       <li v-for="product in sortedProducts" :key="product._id">
         <ProductCard :product="product"></ProductCard>
@@ -14,7 +14,7 @@
 
 <script>
 // import { fetchProducts } from "../api";
-import SortButtons from "./SortButtons.vue";
+import PriceToggle from "./PriceToggle";
 
 import ProductCard from "./ProductCard";
 export default {
@@ -36,7 +36,7 @@ export default {
   },
   components: {
     ProductCard,
-    SortButtons,
+    PriceToggle,
   },
   mounted() {
     // fetchProducts(this.price).then((products) => {

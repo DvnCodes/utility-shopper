@@ -9,8 +9,6 @@ export const fetchProducts = (price = "asc", sortby = "name") => {
       },
     })
     .then(({ data }) => {
-      console.log(data);
-
       return data;
     })
     .catch((err) => err);

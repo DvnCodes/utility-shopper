@@ -1,12 +1,14 @@
 <template>
   <div>
-    <h2>Home</h2>
-    <ProductList :products="products"></ProductList>
+    <!-- <h2>Home</h2> -->
+
+    <ProductListContainer :products="products"></ProductListContainer>
   </div>
 </template>
 
 <script>
-import ProductList from "./ProductList.vue";
+import ProductListContainer from "./ProductListContainer.vue";
+// import ProductList from "./ProductList.vue";
 
 export default {
   name: "Home",
@@ -14,7 +16,7 @@ export default {
   data() {
     return {};
   },
-  components: { ProductList },
+  components: { ProductListContainer },
 };
 </script>
 

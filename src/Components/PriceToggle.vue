@@ -6,20 +6,20 @@
         {{ order === 1 ? "desc" : "asc" }}
       </button>
     </label>
-    <label>
+    <!-- <label>
       Sort By:
       <select>
         <option>all</option>
         <option>department</option>
         <option>type</option>
       </select>
-    </label>
+    </label> -->
   </div>
 </template>
 
 <script>
 export default {
-  name: "SortButtons",
+  name: "PriceToggle",
   props: ["order"],
   data() {
     return {};

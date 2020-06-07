@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <!-- <router-link to="/" :products="products">Home</router-link>
-    <router-link to="/departments">Departments</router-link> -->
+    <router-link to="/departments" :products="products"
+      >Departments</router-link
+    > -->
     <Header></Header>
     <Home :products="products"></Home>
-    <router-view></router-view>
   </div>
 </template>
 
