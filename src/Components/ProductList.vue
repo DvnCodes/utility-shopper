@@ -1,7 +1,8 @@
 <template>
   <div>
+    <SortButtons v-on:changePriceOrder="order *= -1" :order="order"></SortButtons>
     <ul>
-      <li v-for="product in products" :key="product._id">
+      <li v-for="product in sortedProducts" :key="product._id">
         <ProductCard :product="product"></ProductCard>
       </li>
     </ul>
@@ -10,26 +11,41 @@
 
 <script>
 import { fetchProducts } from "../api";
+import SortButtons from "./SortButtons.vue";
+
 import ProductCard from "./ProductCard";
 export default {
   name: "ProductList",
+  props: ["price", "sortby"],
   data() {
     return {
-      products: []
+      products: [],
+      order: 1
     };
   },
-  components: {
-    ProductCard
+  computed: {
+    sortedProducts() {
+      return this.products
+        .slice(0)
+        .sort((a, b) =>
+          a.price.value < b.price.value ? this.order : -this.order
+        );
+    }
   },
-  created() {
-    this.setProducts();
+  components: {
+    ProductCard,
+    SortButtons
+  },
+  mounted() {
+    this.setProducts(this.price, this.sortby);
   },
   methods: {
-    setProducts() {
-      fetchProducts().then(products => {
+    setProducts(price, sortby) {
+      fetchProducts(price, sortby).then(products => {
         this.products = products;
       });
-    }
+    },
+    togglePriceOrder() {}
   }
 };
 </script>

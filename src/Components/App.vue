@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <ProductList></ProductList>
+    <ProductList v-bind:price="price" v-bind:sortby="sortby"></ProductList>
   </div>
 </template>
 
@@ -11,10 +11,17 @@ import ProductList from "./ProductList.vue";
 
 export default {
   name: "app",
+  data() {
+    return {
+      price: "asc",
+      sortby: "name"
+    };
+  },
   components: {
     Header,
     ProductList
-  }
+  },
+  methods: {}
 };
 </script>
 

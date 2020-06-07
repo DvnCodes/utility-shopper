@@ -1,5 +1,10 @@
 <template>
-  <p>{{ product.name }}</p>
+  <div id="card">
+    <h3>{{ product.name }}</h3>
+    <p>{{(product.price.currency === 'GBP' ? '£' : '???') + product.price.value.toFixed(2).toString()}}</p>
+    <p>{{product.department}}</p>
+    <!-- <p>{{product.type}}</p> -->
+  </div>
 </template>
 
 <script>
@@ -12,11 +17,8 @@ export default {
 </script>
 
 <style lang="scss">
-ul {
-  display: flex;
-  flex-direction: column;
-}
-li {
-  padding: 5px;
+#card {
+  border: solid #2c3e50;
+  background-color: #42b983;
 }
 </style>
