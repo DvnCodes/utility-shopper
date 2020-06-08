@@ -51,6 +51,8 @@ h2 {
 ul {
   list-style-type: none;
   padding: 0;
+  width: 60%;
+  margin: auto;
 }
 
 li {
