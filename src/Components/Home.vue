@@ -13,8 +13,9 @@ export default {
   data() {
     return {};
   },
-  components: { ProductListContainer },
+  components: { ProductListContainer }
 };
 </script>
 
-<style></style>
+<style>
+</style>
