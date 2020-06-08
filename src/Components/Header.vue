@@ -17,4 +17,13 @@ export default {
 </script>
 
 <style>
+#Header {
+  background-color: rgb(167, 166, 255);
+  margin: 0;
+}
+h1 {
+  padding: 20px;
+  margin: 0;
+  margin-bottom: 20px;
+}
 </style>
