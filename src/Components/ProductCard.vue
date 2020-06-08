@@ -3,12 +3,15 @@
     <h3>{{ product.name }}</h3>
     <p>
       {{
-        (product.price.currency === "GBP" ? "£" : "???") +
-          product.price.value.toFixed(2).toString()
+      (product.price.currency === "GBP" ? "£" : "???") +
+      product.price.value.toFixed(2).toString()
       }}
     </p>
-    <p>{{ product.description }}</p>
-    <p>{{ product.weight }}</p>
+    <button v-on:click="showMore = !showMore">{{showMore ? 'Less' : "More"}}</button>
+    <div v-if="showMore">
+      <p>{{ product.description }}</p>
+      <p>{{ product.weight }}</p>
+    </div>
   </div>
 </template>
 
@@ -16,8 +19,13 @@
 export default {
   name: "ProductCard",
   props: {
-    product: Object,
+    product: Object
   },
+  data() {
+    return {
+      showMore: false
+    };
+  }
 };
 </script>
 
