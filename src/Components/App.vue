@@ -2,6 +2,7 @@
   <div id="app">
     <Header></Header>
     <Home :products="products"></Home>
+    <h2 v-if="products.length === 0">Loading...</h2>
   </div>
 </template>
 
@@ -16,19 +17,19 @@ export default {
     return {
       products: [],
       price: "asc",
-      sortby: "name",
+      sortby: "name"
     };
   },
   mounted() {
-    fetchProducts().then((products) => {
+    fetchProducts().then(products => {
       this.products = products;
     });
   },
   components: {
     Header,
-    Home,
+    Home
   },
-  methods: {},
+  methods: {}
 };
 </script>
 
@@ -59,5 +60,9 @@ li {
 
 a {
   color: #42b983;
+}
+
+button {
+  margin: 15px;
 }
 </style>

@@ -22,7 +22,7 @@ export default {
   props: ["products"],
   data() {
     return {
-      order: 1,
+      order: 1
     };
   },
   computed: {
@@ -32,12 +32,12 @@ export default {
         .sort((a, b) =>
           a.price.value < b.price.value ? this.order : -this.order
         );
-    },
+    }
   },
   components: {
     ProductCard,
-    PriceToggle,
-  },
+    PriceToggle
+  }
 };
 </script>
 
