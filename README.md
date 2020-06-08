@@ -1,4 +1,4 @@
-# hello-world
+# utility shopper
 
 ## Project setup
 ```
